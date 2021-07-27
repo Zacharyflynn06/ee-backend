@@ -2,9 +2,10 @@ class CreateEvents < ActiveRecord::Migration[6.1]
   def change
     create_table :events do |t|
       t.string :name
+      t.string :avatar
       t.string :ticket_link
       t.float :price
-      t.string :description
+      t.text :description
       t.string :lineup
       t.date :date
       t.string :venue
