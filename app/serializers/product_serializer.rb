@@ -1,4 +1,4 @@
-class ProductsSerializer
+class ProductSerializer
   include JSONAPI::Serializer
-  attributes 
+  attributes :name
 end

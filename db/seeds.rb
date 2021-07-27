@@ -15,3 +15,5 @@ Order.create(user_id: User.first.id, shipping_info: "UPS")
 Order.first.products << Product.first
 
 Cart.first.products << Product.first
+
+User.first.orders << Order.first
