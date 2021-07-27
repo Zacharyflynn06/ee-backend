@@ -5,7 +5,6 @@ class CreateArticles < ActiveRecord::Migration[6.1]
       t.string :link
       t.string :author
       t.date :date
-      t.string :avatar
 
       t.timestamps
     end
