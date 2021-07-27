@@ -5,12 +5,12 @@ class VideosController < ApplicationController
   def index
     @videos = Video.all
 
-    render json: @videos
+    render json: VideoSerializer.new(@videos)
   end
 
   # GET /videos/1
   def show
-    render json: @video
+    render json: VideoSerializer.new(@video)
   end
 
   # POST /videos
@@ -18,7 +18,7 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
 
     if @video.save
-      render json: @video, status: :created, location: @video
+      render json: VideoSerializer.new(@video), status: :created, location: @video
     else
       render json: @video.errors, status: :unprocessable_entity
     end

@@ -5,12 +5,12 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all
 
-    render json: @articles
+    render json: ArticleSerializer.new(@articles)
   end
 
   # GET /articles/1
   def show
-    render json: @article
+    render json: ArticleSerializer.new(@article)
   end
 
   # POST /articles
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
-      render json: @article, status: :created, location: @article
+      render json: ArticleSerializer.new(@article), status: :created, location: @article
     else
       render json: @article.errors, status: :unprocessable_entity
     end

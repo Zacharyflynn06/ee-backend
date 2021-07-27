@@ -5,12 +5,12 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
-    render json: @events
+    render json: EventSerializer.new(@events)
   end
 
   # GET /events/1
   def show
-    render json: @event
+    render json: EventSerializer.new(@event)
   end
 
   # POST /events
@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      render json: @event, status: :created, location: @event
+      render json: EventSerializer.new(@event), status: :created, location: @event
     else
       render json: @event.errors, status: :unprocessable_entity
     end
