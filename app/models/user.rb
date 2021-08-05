@@ -3,6 +3,7 @@ class User < ApplicationRecord
     has_many :orders
 
     enum role: [:guest, :admin]
+    has_secure_password
 
     has_one_attached :image
 
