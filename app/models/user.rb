@@ -4,6 +4,8 @@ class User < ApplicationRecord
 
     enum role: [:guest, :admin]
 
+    has_one_attached :image
+
     validates :username, presence: true, uniqueness: true
     validates :first_name, presence: true
     validates :last_name, presence: true
