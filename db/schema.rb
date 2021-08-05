@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_160252) do
     t.text "description"
     t.string "lineup"
     t.date "date"
+    t.time "time"
     t.string "venue"
     t.string "city"
     t.string "state"

@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[6.1]
       t.text :description
       t.string :lineup
       t.date :date
+      t.time :time
       t.string :venue
       t.string :city 
       t.string :state
