@@ -10,7 +10,7 @@ User.create(username: "z", email: "zacharyflynn06@gmail.com", first_name: "Zac",
 Cart.create(user_id: User.first.id)
 Product.create(name: "T-shirt", price: 10.99, description: "It is a shirt")
 Article.create(title: "band does ok", author: "Rolling Stone")
-Order.create(user_id: User.first.id, shipping_info: "UPS")
+Order.create(user_id: User.first.id)
 
 Order.first.products << Product.first
 
