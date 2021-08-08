@@ -5,5 +5,7 @@ class UserSerializer
 
   has_many :orders
 
-  attributes :username, :email, :first_name, :last_name, :role, :password_digest
+  attributes :username, :email, :first_name, :last_name, :role
+
+  
 end
