@@ -72,12 +72,10 @@ ActiveRecord::Schema.define(version: 2021_08_07_181810) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "ticket_link"
-    t.float "price"
     t.text "description"
     t.string "lineup"
-    t.date "date"
-    t.time "time"
-    t.string "venue"
+    t.string "date"
+    t.string "venue_name"
     t.string "city"
     t.string "state"
     t.datetime "created_at", precision: 6, null: false

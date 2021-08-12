@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'private/test'
+  
+  default_url_options :host => "http://localhost:3001"
+
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',

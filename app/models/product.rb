@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+    include Rails.application.routes.url_helpers
+
     has_many :cart_products
     has_many :carts, through: :cart_products
 
@@ -10,6 +12,10 @@ class Product < ApplicationRecord
     validates :name, presence: :true, uniqueness: :true
     validates :price, numericality: true
     validates :description, presence: true
+
+    def image_url
+        url_for(self.image)
+    end
 
     
 end
