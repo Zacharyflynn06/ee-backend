@@ -13,8 +13,8 @@ Product.create(name: "Ladies T Shirt - Gray", price: 19.99, description: "Bella 
 Product.create(name: "Eminence Wellness CBD", price: 39.99, description: "1000mg CBD Tincture")
 Article.create(title: "band does ok", author: "Rolling Stone")
 
-Event.create(name: "Summer Concert Series", ticket_link: "", price: "", description: "Town party at the base of the mountain!", lineup: "Eminence Ensemble", date: "", time: "", venue: "Steamboat Mountain", city: "Steamboat", state: "Colorado")
-Event.create(name: "Avon Outside", ticket_link: "", price: "", description: "Summer Concer Series", lineup: "Eminence Ensemble", date: "", time: "", venue: "Avon Ampitheater", city: "Avon", state: "Colorado")
+Event.create(name: "Summer Concert Series", ticket_link: "", description: "Town party at the base of the mountain!", lineup: "Eminence Ensemble", date: "Aug-15-2021", venue: "Steamboat Mountain", city: "Steamboat", state: "Colorado")
+Event.create(name: "Avon Outside", ticket_link: "", description: "Summer Concer Series", lineup: "Eminence Ensemble", date: "Sep-1-2021", venue: "Avon Ampitheater", city: "Avon", state: "Colorado")
 
 Order.create(user_id: User.first.id)
 
