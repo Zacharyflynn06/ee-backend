@@ -8,8 +8,14 @@
 
 User.create(email: "zacharyflynn06@gmail.com", first_name: "Zac", last_name: "Flynn", role: "admin", password: "password")
 Cart.create(user_id: User.first.id)
-Product.create(name: "T-shirt", price: 10.99, description: "It is a shirt")
+Product.create(name: "Ladies T Shirt - White", price: 19.99, description: "Bella Canvas Ladies T - Shirt")
+Product.create(name: "Ladies T Shirt - Gray", price: 19.99, description: "Bella Canvas Ladies T - Shirt")
+Product.create(name: "Eminence Wellness CBD", price: 39.99, description: "1000mg CBD Tincture")
 Article.create(title: "band does ok", author: "Rolling Stone")
+
+Event.create(name: "Summer Concert Series", ticket_link: "", price: "", description: "Town party at the base of the mountain!", lineup: "Eminence Ensemble", date: "", time: "", venue: "Steamboat Mountain", city: "Steamboat", state: "Colorado")
+Event.create(name: "Avon Outside", ticket_link: "", price: "", description: "Summer Concer Series", lineup: "Eminence Ensemble", date: "", time: "", venue: "Avon Ampitheater", city: "Avon", state: "Colorado")
+
 Order.create(user_id: User.first.id)
 
 Order.first.products << Product.first

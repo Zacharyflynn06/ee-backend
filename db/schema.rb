@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 2021_08_07_181810) do
     t.string "name"
     t.float "price"
     t.text "description"
+    t.string "size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
