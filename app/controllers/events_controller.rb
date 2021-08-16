@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
+    byebug
     @event = Event.new(event_params)
 
     if @event.save
@@ -26,8 +27,9 @@ class EventsController < ApplicationController
 
   # PATCH/PUT /events/1
   def update
+    
     if @event.update(event_params)
-      render json: @event
+      render json: EventSerializer.new(@event)
     else
       render json: @event.errors, status: :unprocessable_entity
     end
@@ -46,6 +48,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:name, :ticket_link, :description, :lineup, :date, :venue_name, :city, :state)
+      params.permit(:name, :ticket_link, :description, :lineup, :date, :venue_name, :city, :state)
     end
 end

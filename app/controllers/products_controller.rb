@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
-      render json: @product
+      render json: ProductSerializer.new(@product)
     else
       render json: @product.errors, status: :unprocessable_entity
     end
@@ -36,7 +36,9 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1
   def destroy
-    @product.destroy
+    if @product.destroy
+      render json: ProductSerializer.new(@product)
+    end
   end
 
   private
@@ -47,6 +49,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.permit(:name, :price, :description, :image)
+      params.permit(:id, :name, :price, :description, :image)
     end
 end

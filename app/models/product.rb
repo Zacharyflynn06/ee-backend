@@ -9,9 +9,9 @@ class Product < ApplicationRecord
 
     has_one_attached :image
 
-    validates :name, presence: :true, uniqueness: :true
-    validates :price, numericality: true
-    validates :description, presence: true
+    # validates :name, presence: :true, uniqueness: :true
+    # validates :price, numericality: true
+    # validates :description, presence: true
 
     def image_url
         url_for(self.image)
