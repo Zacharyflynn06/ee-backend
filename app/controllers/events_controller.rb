@@ -15,7 +15,7 @@ class EventsController < ApplicationController
 
   # POST /events
   def create
-    byebug
+    
     @event = Event.new(event_params)
 
     if @event.save
@@ -37,7 +37,12 @@ class EventsController < ApplicationController
 
   # DELETE /events/1
   def destroy
-    @event.destroy
+    
+    if @event.destroy
+      render json: EventSerializer.new(@event)
+      
+    end
+    
   end
 
   private
@@ -48,6 +53,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.permit(:name, :ticket_link, :description, :lineup, :date, :venue_name, :city, :state)
+      params.permit( :id, :name, :ticket_link, :description, :lineup, :date, :venue_name, :city, :state)
     end
 end
