@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
     if @product.save
       render json: ProductSerializer.new(@product), status: :created, location: @product
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render json: @product.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       render json: ProductSerializer.new(@product)
     else
-      render json: @product.errors, status: :unprocessable_entity
+      render json: @product.errors.full_messages, status: :unprocessable_entity
     end
   end
 

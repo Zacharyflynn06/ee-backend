@@ -21,7 +21,8 @@ class EventsController < ApplicationController
     if @event.save
       render json: EventSerializer.new(@event), status: :created, location: @event
     else
-      render json: @event.errors, status: :unprocessable_entity
+      # byebug
+      render json: @event.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +32,7 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       render json: EventSerializer.new(@event)
     else
-      render json: @event.errors, status: :unprocessable_entity
+      render json: @event.errors.full_messages, status: :unprocessable_entity
     end
   end
 

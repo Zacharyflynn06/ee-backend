@@ -20,16 +20,16 @@ class ArticlesController < ApplicationController
     if @article.save
       render json: ArticleSerializer.new(@article), status: :created, location: @article
     else
-      render json: @article.errors, status: :unprocessable_entity
+      render json: @article.errors.full_messages.to_sentence, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      render json: @article
+      render json: ArticleSerializer.new(@article)
     else
-      render json: @article.errors, status: :unprocessable_entity
+      render json: @article.errors.full_messages.to_sentence, status: :unprocessable_entity
     end
   end
 

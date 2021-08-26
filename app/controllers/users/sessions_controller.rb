@@ -17,6 +17,7 @@
         status: 200,
         message: "logged out successfully"
       }, status: :ok
+      
     else
       render json: {
         status: 401,
