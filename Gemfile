@@ -30,6 +30,7 @@ gem 'rack-cors'
 gem 'jsonapi-serializer'
 
 gem 'devise'
+
 gem 'devise-jwt'
 
 group :development, :test do

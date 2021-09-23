@@ -16,10 +16,10 @@ Article.create(title: "band does ok", author: "Rolling Stone")
 Event.create(name: "Summer Concert Series", ticket_link: "https://m.facebook.com/events/159583399578752", description: "Town party at the base of the mountain!", lineup: "Eminence Ensemble", date: "Aug-15-2021", venue_name: "Steamboat Mountain", city: "Steamboat", state: "Colorado")
 Event.create(name: "Avon Outside", ticket_link: "", description: "Summer Concer Series", lineup: "Eminence Ensemble", date: "Sep-1-2021", venue_name: "Avon Ampitheater", city: "Avon", state: "Colorado")
 
-Order.create(user_id: User.first.id)
+# Order.create(user_id: User.first.id)
 
-Order.first.products << Product.first
+# Order.first.products << Product.first
 
-Cart.first.products << Product.first
+# Cart.first.products << Product.first
 
-User.first.orders << Order.first
+# User.first.orders << Order.first
